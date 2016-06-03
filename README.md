@@ -31,3 +31,15 @@ gen route directive ต่างๆ
 ส่วนเอกดนัย ทำส่วนของ หน้าแก้ไขข้อมูลของ article จัด form ต่างๆ เชื่อมกับ controller และช่วยกันกับผมในการรวมกันจากหน้า Table ของ Article ไปหน้า แก้ไข ของเอกดนัย 
 
 
+### Day 3 - 03/06/2016
+AngularJS เริ่มยิง API ต่างๆ แต่ก็ไปติดตรง Authentcation ที่ต้องได้ Token จาก Server หลังจากที่ Login ด้วย user และ password
+ก็ต้องแก้ header http ของฝั่ง AngularJS หลายหน้าที่ยิงไปก็ติดปัญหา “Access Allow Origin...” ทำให้ต้อง Mock Data ไปก่อน
+โดยเอาผลลัพธ์จาก Postman มาใช้แทนในรูปแบบของ Object ใน Javascript
+
+ได้ช่วยกัน Refactor และ แก้ไข filestructure naming convention ต่างๆ ให้ดูเป็นมาตรฐานที่เข้าใจง่าย และเป็น best practice
+
+เอกดนัยทำ Login Page เพิ่ม และทำส่วนที่เรียกใช้ REST API Method (put, post, ...) แต่ยังไม่ได้ทดสอบเนื่องจากติดปัญหา ก็เก็บ Token ไว้กะจะไปใช้ในการ set header ต่อไป 
+
+ส่วนผมทำหน้าแสดงผล categories orders และแก้ไข pagination ของ Table ให้ตรงตามที่ Server Response format นั้นมา (จะได้ไม่ต้อง Response ทีละมากๆ) แบ่งหน้าแล้วค่อย Request ขอทีละหน้า โดยมีส่วนของรายการ label ที่แยกตาม case status ที่ให้มา (ใช้ ng-if สะดวกดี)
+
+สรุปแล้วก็ยังเหลือเกี่ยวกับ Authentication และ ติดต่อ API ต่างๆ ได้คำแนะนำจากพี่ ให้แยก Factory ของ Event เพื่อจัดการ API ต่างๆ เพื่อให้ง่ายขึ้น ก็เดี๋ยวคงต้องศึกษา ngResource, header auth และทำส่วนที่เหลือต่อไป : )
