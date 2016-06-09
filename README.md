@@ -83,3 +83,13 @@ Angular taginput
 
 จากที่พี่ๆแนะนำมาพอได้ลองใช้ lodash กันจริงๆ แล้ว แทนที่จะวน for เพื่อจัดการ object ต่างๆ ก็ง่ายขึ้น
 code ก็ซับซ้อนน้อยลง แถม Doc ของ lodash อ่านง่ายด้วย : )
+
+
+### Day 7 - 09/06/2016
+ช่วยกันแก้งานตาม Issue ที่มีใน docs ที่พี่เค้าเตรียมไว้ให้ https://docs.google.com/spreadsheets/d/1XY-Dj-7FxyHJt-HrxuvRdgADd2YLWxxbgUqmMhcoQmE/edit#gid=0
+
+ผมเปลี่ยนจากการใส่ Header Authentication ทุก Function ที่เรียก Api เป็น Http Interceptor และเขียนแยกเป็น Factory
+บางครั้งต้องใช้ api จากข้างนอกจึงใช้ interceptor ในการเปลี่ยนแปลงและจัดการ Header ให้ต่างกัน ซึ่งเขียนให้คอยดักจับ Request และ Response ต่างๆ เพื่อตรวจสอบ Token และ Error ต่างๆ เพื่อ Redirect ให้ User ทำการล็อกอิน นอกนั้นก็ไล่แก้งานตาม issue ซะส่วนใหญ่
+
+เอกดนัย ทำส่วนของ Product edit โดยทำให้การเลือกสีใน UI Select  มีการ preview ค่าให้ผู้ใช้เห็นแบบ Real-time และทำให้การลบ/เพิ่มสีทำงานได้อย่างถูกต้อง
+เพิ่มการแจ้งเตือนเมื่อ user ทำ action ต่างๆ สำเร็จ/ล้มเหลว ด้วย toastr ซึ่งเป็นตัว Notification ที่จะเด้งขึ้นมาบนหน้าจอ
