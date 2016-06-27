@@ -413,6 +413,28 @@ Deactive Layer อื่นๆ เมื่อเข้าสู่ Mode Move �
 
 **ศุภณัฐ**
 
+แก้ไข Route path ของ ReactRouter ของหน้า Create Project ใน Step ต่างๆ
+Mockup UI ใน บาง Step และ ส่วนของ Project Settings 
+
+
+ลองใช้ `IndexRedirect` ของ ReactRouter เมื่อ Set เพื่อให้
+เข้าถึงได้โดยแสดงแต่ละ step `/xyz/somepath1`
+
+```javascript
+<IndexRedirect to="somepath1" />
+<Route path="somepath1" component={SomeComponent} />
+<Route path="somepath2" component={SomeComponent2} />
+```
+
+การใช้ ReactRouter ทำให้จัดการกับ path ได้อย่างเป็นระเบียบ
+มีการแบ่งเป็น หลายระดับ และส่ง parameter ได้ง่าย
+
+
+ได้ลองใช้งาน SCSS โดย import ไปใช้ใน Component ของ ReactJS 
+```javascript
+import classes from './SomeStyle.scss'
+```
+
 **เอกดนัย**
 
 ทำ Route หน้า Feed messages ขึ้นมา
