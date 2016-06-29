@@ -461,7 +461,7 @@ Mock UI ของส่วน ProjectPermissions (ไว้สำหรับจ
 import 'xyz/somestyles.css';
 ```
 
-เมื่อ import ไฟล์ css มาแล้วเกิดปัญหา เนื่องจาก เมื่อ run แล้วถูกเข้าใจว่า เป็น `*.js` โดยจะขึ้นมาว่า 
+เมื่อ import ไฟล์ css มาแล้วเกิดปัญหา เนื่องจาก เมื่อ run แล้วถูกเข้าใจว่า เป็น `*.js` โดยจะขึ้นมาว่า
 
 `[require-hook] Trying   to load "somestyles.css" as a "*.js"` ได้ช่วยกันหากับเอกดนัยจนเจอวิธีแก้ไข
 
@@ -491,3 +491,15 @@ module: {
 สร้าง Components สำหรับจัดการ Breadcrumb เพราะว่าต้องใช้ร่วมกันหลายแห่ง ทำให้การดึง Component มาใช้จะทำได้ง่ายกว่า
 
 Mockup UI สำหรับหน้า Messages, Message card, Breadcrumb
+
+
+## Day 21 - *29/06/2016*
+
+* [React Bootstrap](https://react-bootstrap.github.io/): เป็นการนำ Components ต่างๆของ Bootstrap มาเขียนให้เป็น React component เพื่อความสะดวกในการใช้งาน
+
+
+**ศุภณัฐ**
+
+**เอกดนัย**
+
+Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Collapse และ Dropdown ร่วมด้วย
