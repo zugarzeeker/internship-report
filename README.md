@@ -500,6 +500,9 @@ Mockup UI สำหรับหน้า Messages, Message card, Breadcrumb
 
 **ศุภณัฐ**
 
+Mock UI ของหน้า ProjectMeta ได้ใช้งานร่วมกับ Modal ของ `React Bootstrap` โดยแยกออกมาเป็น Component 
+เพื่อให้สามารถใช้งานได้แตกต่างกัน ยืดหยุ่นมากขึ้น เพื่อให้ reuse ได้ง่าย
+
 **เอกดนัย**
 
 Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Collapse และ Dropdown ร่วมด้วย
