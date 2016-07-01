@@ -524,3 +524,32 @@ Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Col
 * ปัญหาเกี่ยวกับการ Zoom คือ เวลา Zoom แล้ว Offset(ตำแหน่งภาพ) จะไม่ปรับตาม ทำให้ตำแหน่งภาพเลื่อนไปจากที่ควรจะเป็น ก็ต้องทำให้คำนวณ​ Offset ใหม่ให้ถูกต้องทุกครั้งที่ทำการ Zoom
 * ปัญหาการ Move ใช้วิธีลิมิต offset ของการ Move ไม่ให้เกินขอบ
 * ปัญหาการ Download เกิดจากไปดึงข้อมูลผิดที่ ทำให้ได้ข้อมูลเปล่ามา Generate รูป ส่งผลให้รูปพัง ก็แก้โดยการเขียนให้ไปดึงรูปให้ถูกที่
+
+
+## Day 23 - *01/07/2016*
+
+https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-mocha
+
+https://github.com/nelsonic/practical-js-tdd
+
+https://github.com/visionmedia/supertest
+https://github.com/WhoopInc/supertest-as-promised
+https://www.codementor.io/nodejs/tutorial/testing-express-apis-with-supertest
+
+https://github.com/visionmedia/superagent
+
+http://www.designsuperbuild.com/blog/unit_testing_controllers_in_express/
+
+https://glebbahmutov.com/blog/how-to-correctly-unit-test-express-server/
+
+http://blog.martroutine.com/2013/09/mock-%E0%B8%81%E0%B8%B1%E0%B8%9A-stub-%E0%B9%81%E0%B8%95%E0%B8%81%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%87/
+
+http://www.somkiat.cc/test-double-mock-stub-and-dummy/
+
+https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js
+
+http://blog.testdouble.com/posts/2016-03-13-testdouble-vs-sinon.html
+
+https://www.youtube.com/watch?v=E9Fmewoe5L4
+
+https://www.robotlovesyou.com/bdd-tdd/
