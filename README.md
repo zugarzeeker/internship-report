@@ -500,7 +500,7 @@ Mockup UI สำหรับหน้า Messages, Message card, Breadcrumb
 
 **ศุภณัฐ**
 
-Mock UI ของหน้า ProjectMeta ได้ใช้งานร่วมกับ Modal ของ `React Bootstrap` โดยแยกออกมาเป็น Component 
+Mock UI ของหน้า ProjectMeta ได้ใช้งานร่วมกับ Modal ของ `React Bootstrap` โดยแยกออกมาเป็น Component
 เพื่อให้สามารถใช้งานได้แตกต่างกัน ยืดหยุ่นมากขึ้น เพื่อให้ reuse ได้ง่าย
 
 **เอกดนัย**
@@ -509,11 +509,18 @@ Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Col
 
 ## Day 22 - *30/06/2016*
 
-[https://github.com/zugarzeeker/react-bootstrap-modal-plus](https://github.com/zugarzeeker/react-bootstrap-modal-plus)
+แหล่งศึกษา
+* [react-bootstrap-modal-plus](https://github.com/zugarzeeker/react-bootstrap-modal-plus)
+* [multiple-entry-points](https://webpack.github.io/docs/multiple-entry-points.html)
+* [Webpack - Error: a dependency to an entry point is not allowed](https://github.com/webpack/webpack/issues/300)
+* [Angular Pixel Paint](https://github.com/zugarzeeker/angular-pixelpaint)
 
-[https://webpack.github.io/docs/multiple-entry-points.html](https://webpack.github.io/docs/multiple-entry-points.html)
+พี่ได้ Brief เกี่ยวกับ Flow การทำงานของการติดต่อกับ API ซึ่งจะผ่าน API Gateway ที่เป็นตัว Route ไปยัง Microservice ต่างๆ และยังพูดถึงการทำ Authentcation และการ Publish/Subscribe ข้อมูลที่จะ Stream ตลอดเวลาด้วย ซึ่งงานนี้จะใช้ Google AppEngine, DataStore และ BigQuery
 
-[https://github.com/webpack/webpack/issues/300](https://github.com/webpack/webpack/issues/300)
+ศึกษาวิธีการ Build component `react-bootstrap-modal-plus` ที่สร้างขึ้นเอง เนื่องจากพอลงด้วยวิธี `npm install react-bootstrap-modal-plus` แล้วไม่สามารถใช้งานได้
 
-[https://github.com/zugarzeeker/angular-pixelpaint](https://github.com/zugarzeeker/angular-pixelpaint)
+เก็บ Issues ของ Microbrik ที่ยังเหลืออยู่ เช่นหน้า Retouch ที่มีปัญหาเกี่ยวกับการ Zoom, การ Move และหน้า Output ที่มีปัญหาเกี่ยวกับการ Download
 
+* ปัญหาเกี่ยวกับการ Zoom คือ เวลา Zoom แล้ว Offset(ตำแหน่งภาพ) จะไม่ปรับตาม ทำให้ตำแหน่งภาพเลื่อนไปจากที่ควรจะเป็น ก็ต้องทำให้คำนวณ​ Offset ใหม่ให้ถูกต้องทุกครั้งที่ทำการ Zoom
+* ปัญหาการ Move ใช้วิธีลิมิต offset ของการ Move ไม่ให้เกินขอบ
+* ปัญหาการ Download เกิดจากไปดึงข้อมูลผิดที่ ทำให้ได้ข้อมูลเปล่ามา Generate รูป ส่งผลให้รูปพัง ก็แก้โดยการเขียนให้ไปดึงรูปให้ถูกที่
