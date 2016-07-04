@@ -528,43 +528,57 @@ Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Col
 
 ## Day 23 - *01/07/2016*
 
-https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-mocha
+ศึกษา TDD
+* https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-mocha
+* https://github.com/nelsonic/practical-js-tdd
 
-https://github.com/nelsonic/practical-js-tdd
+ทดลองใช้ Supertest
+* https://github.com/visionmedia/supertest
+* https://github.com/WhoopInc/supertest-as-promised
+* https://www.codementor.io/nodejs/tutorial/testing-express-apis-with-supertest
 
-https://github.com/visionmedia/supertest
-https://github.com/WhoopInc/supertest-as-promised
-https://www.codementor.io/nodejs/tutorial/testing-express-apis-with-supertest
+โดยที่ Supertest ต่อยอดมาจาก Superagent อีกที
+* https://github.com/visionmedia/superagent
 
-https://github.com/visionmedia/superagent
+แหล่งศึกษาอื่นๆ
+* http://www.designsuperbuild.com/blog/unit_testing_controllers_in_express/
+* https://glebbahmutov.com/blog/how-to-correctly-unit-test-express-server/
+* http://blog.martroutine.com/2013/09/mock-%E0%B8%81%E0%B8%B1%E0%B8%9A-stub-%E0%B9%81%E0%B8%95%E0%B8%81%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%87/
+* http://www.somkiat.cc/test-double-mock-stub-and-dummy/
+* https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js
+* http://blog.testdouble.com/posts/2016-03-13-testdouble-vs-sinon.html
+* https://www.youtube.com/watch?v=E9Fmewoe5L4
+* https://www.robotlovesyou.com/bdd-tdd/
 
-http://www.designsuperbuild.com/blog/unit_testing_controllers_in_express/
+ซึ่งพยายามลองใช้ Sinon เป็น Fake server สำหรับการ Test แล้ว แต่เห็นว่ามีความซับซ้อน และ Doc ของ Sinon ก็อ่านเข้าใจยาก รวมถึงได้ปรึกษารุ่นพี่ที่รู้จัก และเห็นว่าการเทสต์แบบนั้นจะเปลือง Effort เหมือนกับต้องขียนโปรแกรมสองครั้ง
 
-https://glebbahmutov.com/blog/how-to-correctly-unit-test-express-server/
+###### Let's encrypt
 
-http://blog.martroutine.com/2013/09/mock-%E0%B8%81%E0%B8%B1%E0%B8%9A-stub-%E0%B9%81%E0%B8%95%E0%B8%81%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%87/
+การที่เว็บเราจะใช้ `https://` ได้ ต้องมี Certificate รับรองว่าเว็บเราปลอดภัยก่อน ซึ่ง Certificate จะได้จากองค์กรที่รับออกใบ Cert. แต่การจะได้ใบ Cert. ก็มักจะต้องเสียเงินค่า Cert. ให้ทางนั้นมาตรวจสอบเว็บและออกใบให้
 
-http://www.somkiat.cc/test-double-mock-stub-and-dummy/
+แต่พี่ๆได้แนะนำเว็บ letsencrypt ซึ่งจะทำการออกใบ Cert. ให้ฟรี แต่จะ Renew ใหม่ทุกๆสามเดือน ซึ่งเราต้องไป Generate certificate เองอีกครั้ง แล้วเว็บเราก็จะสามารถใช้ `https://` ได้
 
-https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js
-
-http://blog.testdouble.com/posts/2016-03-13-testdouble-vs-sinon.html
-
-https://www.youtube.com/watch?v=E9Fmewoe5L4
-
-https://www.robotlovesyou.com/bdd-tdd/
-
-Let encrypt
-
-https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04
-
-https://certbot.eff.org/docs/using.html
+* https://letsencrypt.org/
+* https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04
+* https://certbot.eff.org/docs/using.html
 
 
 ## Day 24 - *04/07/2016*
 
-https://medium.com/@dtinth/clean-javascript-using-use-case-interactors-f3a50c138154#.azz8l6nap
+แหล่งศึกษา
+* https://www.babelcoder.com/blog/posts/avoid-callback-hell-using-promise-async-await
+* https://github.com/acdlite/redux-actions
+* https://github.com/yelouafi/redux-saga
+* http://engineering.pivotal.io/post/tdding-react-and-redux/
+* http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
+* https://www.codementor.io/reactjs/tutorial/redux-unit-test-mocha-mocking
+​* https://github.com/reactjs/redux/issues/1367
+​* http://programmers.stackexchange.com/questions/278778/why-are-native-es6-promises-slower-and-more-memory-intensive-than-bluebird
 
-https://www.babelcoder.com/blog/posts/avoid-callback-hell-using-promise-async-await
+[Clean Javascript using use-case interactors](https://medium.com/@dtinth/clean-javascript-using-use-case-interactors-f3a50c138154#.azz8l6nap)
 
-แยก Business Logic จาก Framework (by P'Thai)
+ควรแยก Business logic ออกจาก Framework
+
+เพราะการที่ตัวจัดการ Logic ต่างๆ ต้องผูกอยู่กับการเรียก Framework ต่างๆแบบ Specific (หรือการเรียก Service ต่างๆ ที่เขียนขึ้นเอง โดยเรียกแบบ Hard-code) จะทำให้มี Dependency สูงเกินไป เวลาจะเทสต์อะไรก็ยาก เพราะต้องทำ Stub กับทุก Service ที่ใช้ใน Logic นั้นๆ เพื่อให้รู้ได้ว่า หากเทสต์ไม่ผ่าน ส่วนไหนกันแน่ที่ทำให้ไม่ผ่าน (เช่น Logic อาจจะไม่ผิด แต่ไปผิดที่ Service ที่เรียกใช้แทน)
+
+จึงควรทำการให้ฟังก์ชั่นที่ดูแล Logic ดูแลแค่ส่วน Logic ไม่ผูกกับอะไรอื่นๆอีก ซึ่งทำได้โดยการ ส่งผ่าน "Ports" หรือก็คือ Parameters นั่นเอง ว่าจะใช้อะไรบ้าง ซึ่งนับเป็นข้อดีของ Javascript ที่สามารถส่งอะไรก็ได้มา (Object, Function, Array, etc.) ทำให้การเรียกใช้ตัว Logic นี้จากที่ต่างๆสามารถทำได้สะดวก และตัว Logic นี้เองก็เทสต์ได้ง่ายด้วย โดยเพียงส่งค่าต่างๆไปจาก Test case ไม่ต้องไปกังวลถึง Framework ที่ต้องใช้
