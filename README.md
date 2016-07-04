@@ -553,3 +553,18 @@ http://blog.testdouble.com/posts/2016-03-13-testdouble-vs-sinon.html
 https://www.youtube.com/watch?v=E9Fmewoe5L4
 
 https://www.robotlovesyou.com/bdd-tdd/
+
+Let encrypt
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04
+
+https://certbot.eff.org/docs/using.html
+
+
+## Day 24 - *04/07/2016*
+
+https://medium.com/@dtinth/clean-javascript-using-use-case-interactors-f3a50c138154#.azz8l6nap
+
+https://www.babelcoder.com/blog/posts/avoid-callback-hell-using-promise-async-await
+
+แยก Business Logic จาก Framework (by P'Thai)
