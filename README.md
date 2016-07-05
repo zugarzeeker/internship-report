@@ -550,13 +550,13 @@ Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Col
 * https://www.youtube.com/watch?v=E9Fmewoe5L4
 * https://www.robotlovesyou.com/bdd-tdd/
 
-ซึ่งพยายามลองใช้ Sinon เป็น Fake server สำหรับการ Test แล้ว แต่เห็นว่ามีความซับซ้อน และ Doc ของ Sinon ก็อ่านเข้าใจยาก รวมถึงได้ปรึกษารุ่นพี่ที่รู้จัก และเห็นว่าการเทสต์แบบนั้นจะเปลือง Effort เหมือนกับต้องขียนโปรแกรมสองครั้ง
+ซึ่งพยายามลองใช้ Sinon ในการ stub, mock ของ request, response สำหรับการ Test แล้ว แต่เห็นว่ามีความซับซ้อน และ Doc ของ Sinon ก็อ่านเข้าใจยาก รวมถึงได้ปรึกษารุ่นพี่ที่รู้จัก และเห็นว่าการเทสต์แบบนั้นจะเปลือง Effort เหมือนกับต้องเขียนโปรแกรมสองครั้ง
 
 ###### Let's encrypt
 
 การที่เว็บเราจะใช้ `https://` ได้ ต้องมี Certificate รับรองว่าเว็บเราปลอดภัยก่อน ซึ่ง Certificate จะได้จากองค์กรที่รับออกใบ Cert. แต่การจะได้ใบ Cert. ก็มักจะต้องเสียเงินค่า Cert. ให้ทางนั้นมาตรวจสอบเว็บและออกใบให้
 
-แต่พี่ๆได้แนะนำเว็บ letsencrypt ซึ่งจะทำการออกใบ Cert. ให้ฟรี แต่จะ Renew ใหม่ทุกๆสามเดือน ซึ่งเราต้องไป Generate certificate เองอีกครั้ง แล้วเว็บเราก็จะสามารถใช้ `https://` ได้
+แต่พี่ๆที่บริษัทได้แนะนำเว็บ letsencrypt ซึ่งจะทำการออกใบ Cert. ให้ฟรี แต่จะ Renew ใหม่ทุกๆสามเดือน ซึ่งเราต้องไป Generate certificate เองอีกครั้ง แล้วเว็บเราก็จะสามารถใช้ `https://` ได้
 
 * https://letsencrypt.org/
 * https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04
@@ -572,8 +572,8 @@ Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Col
 * http://engineering.pivotal.io/post/tdding-react-and-redux/
 * http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
 * https://www.codementor.io/reactjs/tutorial/redux-unit-test-mocha-mocking
-​* https://github.com/reactjs/redux/issues/1367
-​* http://programmers.stackexchange.com/questions/278778/why-are-native-es6-promises-slower-and-more-memory-intensive-than-bluebird
+* https://github.com/reactjs/redux/issues/1367
+* http://programmers.stackexchange.com/questions/278778/why-are-native-es6-promises-slower-and-more-memory-intensive-than-bluebird
 
 [Clean Javascript using use-case interactors](https://medium.com/@dtinth/clean-javascript-using-use-case-interactors-f3a50c138154#.azz8l6nap)
 
@@ -582,3 +582,6 @@ Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Col
 เพราะการที่ตัวจัดการ Logic ต่างๆ ต้องผูกอยู่กับการเรียก Framework ต่างๆแบบ Specific (หรือการเรียก Service ต่างๆ ที่เขียนขึ้นเอง โดยเรียกแบบ Hard-code) จะทำให้มี Dependency สูงเกินไป เวลาจะเทสต์อะไรก็ยาก เพราะต้องทำ Stub กับทุก Service ที่ใช้ใน Logic นั้นๆ เพื่อให้รู้ได้ว่า หากเทสต์ไม่ผ่าน ส่วนไหนกันแน่ที่ทำให้ไม่ผ่าน (เช่น Logic อาจจะไม่ผิด แต่ไปผิดที่ Service ที่เรียกใช้แทน)
 
 จึงควรทำการให้ฟังก์ชั่นที่ดูแล Logic ดูแลแค่ส่วน Logic ไม่ผูกกับอะไรอื่นๆอีก ซึ่งทำได้โดยการ ส่งผ่าน "Ports" หรือก็คือ Parameters นั่นเอง ว่าจะใช้อะไรบ้าง ซึ่งนับเป็นข้อดีของ Javascript ที่สามารถส่งอะไรก็ได้มา (Object, Function, Array, etc.) ทำให้การเรียกใช้ตัว Logic นี้จากที่ต่างๆสามารถทำได้สะดวก และตัว Logic นี้เองก็เทสต์ได้ง่ายด้วย โดยเพียงส่งค่าต่างๆไปจาก Test case ไม่ต้องไปกังวลถึง Framework ที่ต้องใช้
+
+
+## Day 25 - *05/07/2016*
