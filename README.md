@@ -585,3 +585,78 @@ Mockup UI สำหรับหน้า Filter ซึ่งใช้ Expand/Col
 
 
 ## Day 25 - *05/07/2016*
+
+#### แหล่งศึกษา
+
+Babel
+* https://babeljs.io/docs/setup/#installation
+* http://babeljs.io/docs/plugins/preset-stage-0
+* https://babeljs.io/docs/plugins/transform-runtime/
+
+Asynchronous ES7
+* http://stackabuse.com/node-js-async-await-in-es7/
+* http://blog.shaunxu.me/2016-06-14-es7-async-await-in-node-with-bebel/
+* http://yannickloriot.com/2016/05/async-functions-in-es7/
+* https://www.babelcoder.com/blog/posts/avoid-callback-hell-using-promise-async-await
+
+CircleCI
+* https://circleci.com/
+
+GoogleCloudPlatform
+* https://cloud.google.com/nodejs/getting-started/hello-world
+* https://github.com/GoogleCloudPlatform/cloud-debug-nodejs
+* https://github.com/GoogleCloudPlatform/nodejs-docker
+
+Setup Project Backend API Node.js ที่ทำอยู่ ให้ใช้ async, await เพื่อให้เขียนได้ง่ายขึ้น
+ซึ่งเป็นของ ES7 ได้ แต่ปัจจุบันตอนนี้ ยังต้องใช้งาน ES7 ผ่าน babel
+
+จึงต้อง set `.babelrc` (stage-0 มีทั้ง stage-1, stage2, stage-3)
+
+ไฟล์ `.babelrc` เกี่ยวกับการตั้งค่าเมื่อใช้งาน babel
+```javascript
+{
+  "presets" : ["es2015", "stage-0"],
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ]
+}
+```
+
+เมื่อตัดสินใจเปลี่ยนไปใช้ ES7 จึงต้องแก้ไข `package.json`, `ESLint`, `Mocha` เพื่อให้ใช้งานร่วมกันได้
+
+ตัวอย่างคำสั่ง วิธีการ run ผ่าน babel (ต้องติดตั้ง babel-cli ก่อน จึงจะใช้ babel-node ได้)
+```bash
+./node_modules/babel-node app.js
+```
+
+ไฟล์ `package.json` คำสั่งที่ใช้ในการ run และ dependencies ต่างๆ
+```Javascript
+"scripts": {
+  "eslint": "eslint **/*.js **.js",
+  "test": "mocha ./tests/**/*.spec.js --compilers js:babel-register",
+  "test-watch": "mocha --watch ./tests/**/*.spec.js --compilers js:babel-register",
+  "start": "./node_modules/.bin/babel-node app.js",
+  ...
+},
+"dependencies": {
+  "babel-cli": "^6.10.1",
+  "babel-core": "^6.10.4",
+  "babel-eslint": "^6.1.0",
+  "babel-loader": "^6.2.4",
+  "babel-polyfill": "^6.9.1",
+  "babel-preset-es2015": "^6.9.0",
+  "babel-preset-stage-0": "^6.5.0",
+  "babel-register": "^6.9.0",
+  "babel-runtime": "^6.9.2",
+  ...
+}
+```
+
+ต้องตรวจสอบกับ CircleCI ว่ายังคง run ได้เป็นปกติ ผ่านหรือไม่
+ซึ่ง CircleCI พี่ที่บริษัทได้ Set ไว้ว่า ถ้าหาก test ผ่าน จะนำไป Deploy บน google cloud platform ต่อ
+
+ก่อนกลับพี่ๆที่บริษัท ให้ลองประเมินเวลาที่จะควรจะใช้ในการทำงานของงานที่จะได้ทำถัดไป
+โดยเปรียบเทียบกัน ของ effort manday ที่ควรจะใช้ ใน GoogleSheet ที่ช่วยๆกันประเมิน
