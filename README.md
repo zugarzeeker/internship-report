@@ -633,7 +633,7 @@ Setup Project Backend API Node.js ที่ทำอยู่ ให้ใช้
 ```
 
 ไฟล์ `package.json` คำสั่งที่ใช้ในการ run และ dependencies ต่างๆ
-```Javascript
+```javascript
 "scripts": {
   "eslint": "eslint **/*.js **.js",
   "test": "mocha ./tests/**/*.spec.js --compilers js:babel-register",
@@ -651,6 +651,7 @@ Setup Project Backend API Node.js ที่ทำอยู่ ให้ใช้
   "babel-preset-stage-0": "^6.5.0",
   "babel-register": "^6.9.0",
   "babel-runtime": "^6.9.2",
+  "babel-plugin-transform-runtime": "^6.9.0",
   ...
 }
 ```
@@ -660,3 +661,42 @@ Setup Project Backend API Node.js ที่ทำอยู่ ให้ใช้
 
 ก่อนกลับพี่ๆที่บริษัท ให้ลองประเมินเวลาที่จะควรจะใช้ในการทำงานของงานที่จะได้ทำถัดไป
 โดยเปรียบเทียบกัน ของ effort manday ที่ควรจะใช้ ใน GoogleSheet ที่ช่วยๆกันประเมิน
+
+## Day 26 - *06/07/2016*
+
+ทดลอง Deploy แอพลงบน Google Cloud Platform Node.js ซึ่งตอนแรกคิดว่าอาจจะมีปัญหาที่การใช้ babel-node มาเป็นตัวรัน
+
+> **Not meant for production use**
+>
+> You should not be using `babel-node` in production. It is unnecessarily heavy, with high memory usage due to the cache being stored in memory. You will also always experience a startup performance penalty as the entire app needs to be compiled on the fly.
+>
+> *Ref: [babeljs.io/cli](https://babeljs.io/docs/usage/cli/#babel-node)*
+
+
+เลยพยายามหาวิธีที่ไม่ต้องใช้ Babel
+* ลอง ssh ขึ้นไป Build บน CI แล้วค่อยส่งขึ้น Google Cloud
+* ไม่ใช้ async/await ของ ES7 แต่ไปใช้ Library ที่ทำงานได้คล้ายกันแทนของ [yortus/asyncawait](
+https://github.com/yortus/asyncawait)
+* กลับไปเขียน Promise แบบ ES6 ซึ่งก็ได้ศึกษาการพัฒนาของการเขียน Callback จาก [ES 5-6-7: From Callbacks to Promises to Generators to Async/await](https://medium.com/@rdsubhas/es6-from-callbacks-to-promises-to-generators-87f1c0cd8f2e#.ocsiahf7z)
+* ศึกษาว่าแต่ละ Stage ว่ามีรายละเอียดอย่างไรบ้างจาก [hemanth/es-next](https://github.com/hemanth/es-next)
+* กำหนด Engine ที่ Google cloud ใช้ โดยระบุใน package.json เพราะนึกว่าเป็นปัญหาเรื่องเวอร์ชั่นของ Node, npm ที่ทำงานไม่ได้
+```javascript
+"engines": {
+   "node": ">=6.0.0 <7.0.0"
+ }
+```
+
+แต่เมื่อพยายามช่วยกันหาร่วมกับพี่ๆ ก็ไปพบว่า ปัญหาที่แท้จริงมาจาก Server npm ซึ่งนักพัฒนาทั่วโลกเจอกันเยอะมาก (เพิ่งเกิดขึ้นไม่กี่วัน) ตาม Issue ด้านล่าง
+
+https://github.com/npm/npm/issues/13284
+
+ซึ่งทำให้การ Deploy ลงที่ๆต้องการ npm ช่วย ไม่สามารถทำได้ ทั้ง Heroku, TravisCI, CircleCI, etc.
+
+ในประเทศไทย จริงๆแล้วยังสามารถใช้ npm ได้อยู่ แต่ปัญหาที่เกิดกับงานที่ทำอยู่คือต้องการ Deploy ไปยัง Google Cloud ซึ่งอยู่ต่างประเทศ จึงไม่สามารถทำได้
+
+เมื่อเห็นว่าไม่สามารถทำงานส่วนที่ต้องใช้ Google Cloud ต่อได้ จึงกลับไปทำ Mockup UI ที่ยังไม่เสร็จต่อ
+
+_แหล่งศึกษาเพิ่มเติมเกี่ยวกับ Asynchronous บน Javascript_
+* https://github.com/laverdet/node-fibers
+* https://github.com/tj/co
+* https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/function*
