@@ -700,3 +700,26 @@ _แหล่งศึกษาเพิ่มเติมเกี่ยวก�
 * https://github.com/laverdet/node-fibers
 * https://github.com/tj/co
 * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/function*
+
+
+## Day 27 - *07/07/2016*
+
+https://medium.com/javascript-scene/5-common-misconceptions-about-tdd-unit-tests-863d5beb3ce9#.t2ikwgs42
+
+https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d#.x1l0wyysf
+
+http://stackoverflow.com/questions/8776567/unit-test-business-logic-layer
+
+http://pm2.keymetrics.io/
+
+https://github.com/Unitech/pm2/issues/1167
+
+https://github.com/bootprint/bootprint-openapi
+
+https://medium.com/wdstack/bootstrap-4-whats-new-visual-guide-c84dd81d8387#.tsyglmmsd
+
+http://www.tutorialspoint.com/software_testing/software_testing_myths.htm
+
+http://www.tutorialspoint.com/software_testing/software_testing_levels.htm
+
+http://sqa.stackexchange.com/questions/1014/ui-and-business-logic-testing-am-i-doing-it-right-should-i-unit-test-anything
