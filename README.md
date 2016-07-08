@@ -723,3 +723,14 @@ http://www.tutorialspoint.com/software_testing/software_testing_myths.htm
 http://www.tutorialspoint.com/software_testing/software_testing_levels.htm
 
 http://sqa.stackexchange.com/questions/1014/ui-and-business-logic-testing-am-i-doing-it-right-should-i-unit-test-anything
+
+
+## Day 28 - *08/07/2016*
+
+**ศุภณัฐ**
+
+ได้ลองทำ route-proxy ให้ติดต่อกันระหว่าง server ผ่าน gateway server กับ user-services โดยยังลองใน localhost อยู่ และเขียน test ในส่วนของ Business Logic ของโค้ด Backend แยกการทำงานเป็นส่วนๆมาประกอบกัน ทำให้สามารถ Test ได้ง่ายขึ้น
+
+พีกอล์ฟได้แนะนำ [https://github.com/jfrazelle/dotfiles](https://github.com/jfrazelle/dotfiles) เป็น Repo เกี่ยวกับ ไฟล์ config ต่างๆ
+พี่ซันได้ fork bootprint-api (นำ Swagger มา gen doc ในรูปแบบ html) มาแก้ไขเพิ่มเติม ทำให้ดูได้ง่ายขึ้น
+ดูได้ที่ [https://github.com/5un/bootprint-openapi](https://github.com/5un/bootprint-openapi)
