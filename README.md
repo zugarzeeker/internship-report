@@ -734,3 +734,17 @@ http://sqa.stackexchange.com/questions/1014/ui-and-business-logic-testing-am-i-d
 พีกอล์ฟได้แนะนำ [https://github.com/jfrazelle/dotfiles](https://github.com/jfrazelle/dotfiles) เป็น Repo เกี่ยวกับ ไฟล์ config ต่างๆ
 พี่ซันได้ fork bootprint-api (นำ Swagger มา gen doc ในรูปแบบ html) มาแก้ไขเพิ่มเติม ทำให้ดูได้ง่ายขึ้น
 ดูได้ที่ [https://github.com/5un/bootprint-openapi](https://github.com/5un/bootprint-openapi)
+
+
+## Day 29 - *11/07/2016*
+
+#### แหล่งศึกษา
+* [Write Unit Test 101 — Simple test](https://medium.com/@chrisza/write-unit-test-101-simple-test-8f4d76dead54#.dl3o1if1g)
+* [Refactor เมื่อไหร่ดี?](https://medium.com/@chrisza/refactor-%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%84%E0%B8%AB%E0%B8%A3%E0%B9%88%E0%B8%94%E0%B8%B5-9913f9e2b240#.xwwv6nbum)
+* [TDD Misconception](https://medium.com/@chrisza/tdd-misconception-7c1ecf990758#.pm5yelcvn)
+
+**ศุภณัฐ**
+
+เขียน Business Logic และ Test ได้แก่ organization, roles, feeds, บางส่วนของ users ในส่วนของ Backend (Node.js)
+โดยวันนี้ได้พบกับความง่ายอย่างนึงคือ Slack ที่ใช้อยู่พี่กอล์ฟได้ Integrate เข้ากับ CircleCI ทำให้ตอน push code ไม่ต้องตามดูว่าผ่านหรือไม่ ใน CircleCI
+แต่ดูตอนแจ้งเตือนขึ้นมาใน channel ของ Slack แทน
