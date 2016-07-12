@@ -748,3 +748,10 @@ http://sqa.stackexchange.com/questions/1014/ui-and-business-logic-testing-am-i-d
 เขียน Business Logic และ Test ได้แก่ organization, roles, feeds, บางส่วนของ users ในส่วนของ Backend (Node.js)
 โดยวันนี้ได้พบกับความง่ายอย่างนึงคือ Slack ที่ใช้อยู่พี่กอล์ฟได้ Integrate เข้ากับ CircleCI ทำให้ตอน push code ไม่ต้องตามดูว่าผ่านหรือไม่ ใน CircleCI
 แต่ดูตอนแจ้งเตือนขึ้นมาใน channel ของ Slack แทน
+
+
+## Day 30 - *12/07/2016*
+
+https://googlecloudplatform.github.io/gcloud-node/#/docs/v0.36.0/datastore
+
+Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and Create Utility function
