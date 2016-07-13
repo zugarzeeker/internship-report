@@ -755,3 +755,16 @@ http://sqa.stackexchange.com/questions/1014/ui-and-business-logic-testing-am-i-d
 https://googlecloudplatform.github.io/gcloud-node/#/docs/v0.36.0/datastore
 
 Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and Create Utility function
+
+
+## Day 31 - *13/07/2016*
+
+**ศุภณัฐ**
+
+- Route, Google Datastore
+- Set ReactJS & Redux CircleCI & Deploy on GoogleAppEngine
+
+**เอกดนัย**
+
+- gg frontend
+- Fixed Style Loader ReactJS & Redux
