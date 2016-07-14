@@ -768,3 +768,15 @@ Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and
 
 - gg frontend
 - Fixed Style Loader ReactJS & Redux
+
+## Day 32 - *14/07/2016*
+
+**ศุภณัฐ*
+
+- Backend gateway proxy Superagent (get put post delete)
+- Backend เชื่อม Route กับ BL
+- Build & Test CircleCI --> Deploy Frontend Redux --> Google App Engine
+- Datastore Utility (Promise --> resolve and reject)
+
+**เอกดนัย**
+- gg frontend (Style)
