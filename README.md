@@ -771,7 +771,7 @@ Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and
 
 ## Day 32 - *14/07/2016*
 
-**ศุภณัฐ*
+**ศุภณัฐ**
 
 - Backend gateway proxy Superagent (get put post delete)
 - Backend เชื่อม Route กับ BL
@@ -779,4 +779,23 @@ Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and
 - Datastore Utility (Promise --> resolve and reject)
 
 **เอกดนัย**
+
 - gg frontend (Style)
+
+
+## Day 33 - *15/07/2016*
+
+**ศุภณัฐ**
+
+http://visionmedia.github.io/superagent/
+
+exception
+https://www.babelcoder.com/blog/posts/avoid-callback-hell-using-promise-async-await
+
+query datastore
+https://cloud.google.com/datastore/docs/concepts/queries
+
+- Refactor Datastore Utility
+- Route users, BL login
+- Route proxy & Postman
+- test & BL handle exceptions
