@@ -3,6 +3,8 @@
 
 # [Internship Report](https://github.com/zugarzeeker/internship-report)
 
+## Details
+
 Internship report @Runnables of Supanut & Aikdanai  
 Digital Products for Real World Problems
 
