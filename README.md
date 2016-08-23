@@ -6,13 +6,8 @@
 Internship report @Runnables of Supanut & Aikdanai  
 Digital Products for Real World Problems
 
-รายงานการฝึกงานที่ Runnables
 * ศุภณัฐ อภิกุลวณิช 5610501016 [@zugarzeeker](https://github.com/zugarzeeker)
 * เอกดนัย สิทธิโกศล 5610500079 [@blutarche](https://github.com/blutarche)
-
-ภาควิชาวิศวกรรมคอมพิวเตอร์  
-คณะวิศวกรรมศาสตร์                                                          
-มหาวิทยาลัยเกษตรศาสตร์
 
 ## ระยะเวลาฝึกงาน
 
