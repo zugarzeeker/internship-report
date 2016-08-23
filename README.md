@@ -3,6 +3,8 @@
 
 # [Internship Report](https://github.com/zugarzeeker/internship-report)
 
+Internship report @Runnables of Supanut & Aikdanai
+
 รายงานการฝึกงานที่ Runnables
 * ศุภณัฐ อภิกุลวณิช 5610501016 [@zugarzeeker](https://github.com/zugarzeeker)
 * เอกดนัย สิทธิโกศล 5610500079 [@blutarche](https://github.com/blutarche)
