@@ -364,8 +364,6 @@ const model = gstore.model('AccessToken', schema, { cache: false });
 - เชื่อม Route & Proxy ของส่วน Organization เข้ากับ Business Logic และ Service
 - เชื่อม Route & Proxy ของส่วน Permission จะมีเกี่ยวกับรายละเอียด Resource ที่เข้าถึงได้ ซึ่งแต่ละ Role ซึ่งจะเก็บ id ของ permissions ไว้
 
-## Day 36 - *22/07/2016*
-
 **เอกดนัย**
 
 ทำเว็บ `GG`
