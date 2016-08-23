@@ -1,3 +1,6 @@
+# JULY (Days 23 - 41)
+---
+
 ## Day 23 - *01/07/2016*
 
 ศึกษา TDD
@@ -470,14 +473,13 @@ import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 
 ## Day 41 - *29/07/2016*
 
-**ศุภณัฐ**
-
 ### แหล่งศึกษา
 
 - [react-router](https://github.com/reactjs/react-router)
 - [@asyncConnect](https://github.com/Rezonans/redux-async-connect)
 - [@asyncConnect vs @connect](http://stackoverflow.com/questions/36000039/react-redux-not-passing-data)
 
+**ศุภณัฐ**
 
 Web `GG`
 
