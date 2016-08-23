@@ -487,7 +487,7 @@ Web `GG`
 ซึ่งจริงๆ แล้ว ต้องใช้กับ react-router เมื่อมีการ Load route แล้วเรียก Component ตัวไหน ถึงจะใช้ได้
 
 ```js
-<Route to="/home" component={Home} />
+<Route path="home" component={Home} />
 ```
 
 ```js
