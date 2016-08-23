@@ -2,12 +2,12 @@
 
 # [Internship Report](https://github.com/zugarzeeker/internship-report)
 
+บันทึกการฝึกงานของศุภณัฐ อภิกุลวณิช  
+และเอกดนัย สิทธิโกศล ณ RUNNABLES CO., LTD. 
+
 รายชื่อนิสิต
 * ศุภณัฐ อภิกุลวณิช 5610501016 [@zugarzeeker](https://github.com/zugarzeeker)
 * เอกดนัย สิทธิโกศล 5610500079 [@blutarche](https://github.com/blutarche)
-
-บันทึกการฝึกงานของศุภณัฐ  
-และเอกดนัย ณ RUNNABLES CO., LTD. แหล่งรวมคนดีร้อยฝีมือล้าน 
 
 ## ระยะเวลาฝึกงาน
 
