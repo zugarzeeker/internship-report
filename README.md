@@ -27,7 +27,7 @@
 รับทำ Application ตาม Requirements  
 ซึ่งโดยมากจะเป็น Web Application / iOS Application / Android Application
 
-แต่งานเกี่ยวกับ Hardware ก็มีเช่นกัน เช่นการทำ IoT, Application ที่ประยุกต์ใช้กับ
+แต่งานเกี่ยวกับ Hardware ก็มีเช่นกัน เช่นการทำ IoT, Application ที่ประยุกต์ใช้กับอุปกรณ์ต่างๆ
 
 ---
 
