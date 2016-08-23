@@ -6,9 +6,8 @@
 * ศุภณัฐ อภิกุลวณิช 5610501016 [@zugarzeeker](https://github.com/zugarzeeker)
 * เอกดนัย สิทธิโกศล 5610500079 [@blutarche](https://github.com/blutarche)
 
-
 บันทึกการฝึกงานของศุภณัฐ  
-และเอกดนัย ณ Runnables  
+และเอกดนัย ณ RUNNABLES CO., LTD. แหล่งรวมคนดีร้อยฝีมือล้าน 
 
 ## ระยะเวลาฝึกงาน
 
