@@ -2,5 +2,6 @@
   "plugins": ["styles-sass"],
   "styles": {
     "website": "./styles/website.scss"
-  }
+  },
+  "description": "Internship report @Runnables of Supanut & Aikdanai"
 }
