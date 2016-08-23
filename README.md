@@ -33,7 +33,7 @@
 
 ## บทคัดย่อ
 
-พวกเราได้รับการเข้าร่วมฝึกงานภาคฤดูร้อนและภาคสหกิจศึกษาเทอมต้นกับบริษัท `RUNNABLES CO., LTD.` โดยได้ทำเกี่ยวกับ Application ต่างๆที่ได้รับมอบหมาย ซึ่งได้ใช้เทคโนโลยีต่างๆ ทั้ง AngularJS, ReactJS, Redux, Node.js, Google AppEngine, Google DataStore, Google BigQuery, Docker, CI, TDD, AWS และอื่นๆอีกมากมาย
+พวกเราได้รับการเข้าร่วมฝึกงานภาคฤดูร้อนและภาคสหกิจศึกษาเทอมต้นกับบริษัท `RUNNABLES CO., LTD.` โดยได้ทำเกี่ยวกับ Application ต่างๆที่ได้รับมอบหมาย ซึ่งได้ใช้เทคโนโลยีและเทคนิคต่างๆ ทั้ง AngularJS, ReactJS, Redux, Node.js, Google AppEngine, Google DataStore, Google BigQuery, Docker, CI, TDD, AWS และอื่นๆอีกมากมาย
 
 ## คำนำ
 
