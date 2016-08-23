@@ -204,7 +204,7 @@ http://sqa.stackexchange.com/questions/1014/ui-and-business-logic-testing-am-i-d
 ได้ลองทำ route-proxy ให้ติดต่อกันระหว่าง server ผ่าน gateway server กับ user-services โดยยังลองใน localhost อยู่ และเขียน test ในส่วนของ Business Logic ของโค้ด Backend แยกการทำงานเป็นส่วนๆมาประกอบกัน ทำให้สามารถ Test ได้ง่ายขึ้น
 
 พีกอล์ฟได้แนะนำ [https://github.com/jfrazelle/dotfiles](https://github.com/jfrazelle/dotfiles) เป็น Repo เกี่ยวกับ ไฟล์ config ต่างๆ
-พี่ซันได้ fork bootprint-api (นำ Swagger มา gen doc ในรูปแบบ html) มาแก้ไขเพิ่มเติม ทำให้ดูได้ง่ายขึ้น
+พี่ซันได้ fork bootprint-api (นำ Swagger มา generate document ในรูปแบบ html) มาแก้ไขเพิ่มเติม ทำให้ดูได้ง่ายขึ้น
 ดูได้ที่ [https://github.com/5un/bootprint-openapi](https://github.com/5un/bootprint-openapi)
 
 
@@ -233,8 +233,9 @@ Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and
 
 **ศุภณัฐ**
 
-- Route, Google Datastore
-- Set ReactJS & Redux CircleCI & Deploy on GoogleAppEngine
+แก้ไข Route ของ Role ให้ใช้งานร่วมกับ Google Datastore ในส่วนของ API
+
+Set CircleCI Project `Social` ในส่วน Frontend (ReactJS & Redux) ให้ Build และ Deploy บน GoogleAppEngine
 
 **เอกดนัย**
 
@@ -245,10 +246,11 @@ Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and
 
 **ศุภณัฐ**
 
-- Backend gateway proxy Superagent (get put post delete)
-- Backend เชื่อม Route กับ BL
-- Build & Test CircleCI --> Deploy Frontend Redux --> Google App Engine
-- Datastore Utility (Promise --> resolve and reject)
+ในส่วนของ Backend
+แก้ไข gateway proxy ซึ่งใช้ superagent ในการ request method ต่างๆ (get put post delete) ในการเข้าถึง Services ต่างๆ โดยสามารถส่ง params, body, header และ อื่นๆ ไปยัง services ที่เรียกใช้ได้
+เชื่อม Route ต่างๆเข้ากับ Business Logic ที่เขียนไว้
+
+ในส่วนของ Frontend (ReactJS & Redux) Build & Test บน CircleCI ถ้าผ่านก็จะ Deploy บน Google App Engine
 
 **เอกดนัย**
 
@@ -257,48 +259,145 @@ Route & CircleCI Deploy Google App Engine 2 instance (= 2 services) Learn DS and
 
 ## Day 33 - *15/07/2016*
 
+ศึกษาเกี่ยวกับ
+[avoid-callback-hell-using-promise-async-await](https://www.babelcoder.com/blog/posts/avoid-callback-hell-using-promise-async-await)
+
 **ศุภณัฐ**
 
-http://visionmedia.github.io/superagent/
-
-exception
-https://www.babelcoder.com/blog/posts/avoid-callback-hell-using-promise-async-await
-
-query datastore
-https://cloud.google.com/datastore/docs/concepts/queries
-
-- Refactor Datastore Utility
-- Route users, BL login
-- Route proxy & Postman
-- test & BL handle exceptions
+ทำส่วน Backend ของ Project `Social`
+- Refactor Datastore Utility ที่เขียนไว้ให้อ่านง่ายขึ้น โดยใช้งานร่วมกับ [datastore-quries](https://cloud.google.com/datastore/docs/concepts/queries)
+- เชื่อม Route users เข้ากับ Business Logic รวมถึง Login ด้วย
+- เชื่อม Route proxy ไปยัง Route users services เพื่อให้เรียกใช้ผ่าน Gateway Proxy
+ซึ่งไม่สามารถเรียก Services ตรงๆ ได้ เนื่องจากต้องใช้ api-key ที่ set ไว้
+โดยใช้งานร่วมกับ [superagent](http://visionmedia.github.io/superagent/)
+- ทำ List API ใน Postman เพื่อให้ทดสอบได้ง่าย
+- จัดการกับ exceptions ของ Test & Business Logic
 
 
 ## Day 34 - *20/07/2016*
 
+**ศุภณัฐ**
 
+ทำ Backend Project `Social`
+- ส่วน Create user และ hash password เมื่อสร้าง user ใหม่ ด้วย `bcrypt`
+- ส่วน Authenticator Middlewares ช่วยในการสร้าง Accesstoken และ ทำให้คืนข้อมูลของ user จาก AccessToken ด้วย โดยใช้งานร่วมกับ `Google Datastore`
+- การใช้งาน `Datastore` เปลี่ยนไปใช้ [gstore-node](https://github.com/sebelga/gstore-node) เนื่องจากใช้งานง่าย และ มีความใกล้เคียงกับ `Mongoose` ซึ่งใช้งานร่วมกับ `MongoDB`
+- ได้ลองใช้ `promisifyAll` เพื่อทำให้ function ธรรมดาสามารถใช้ promise ได้
+
+ ```javascript
+ Promise.promisifyAll(SomeModel);
+ Promise.promisifyAll(SomeModel.prototype);
+ ```
 
 ## Day 35 - *21/07/2016*
 
+**ศุภณัฐ**
+
+ทำ Backend Project `Social`
+- ลบ Accesstoken จาก Datastore เมื่อ user logoff
+- แยกโค้ดที่ใช้งานเฉพาะอย่าง ออกเป็น Services เพื่อลดความซ้ำซ้อน
+- ใช้ `express-validator` ในการ validate params, body ต่างๆ ของ request
+- แก้ Bug ให้สามารถ response ได้ เมื่อไม่มี access-token ปกติ จะค้างไปเลย เช็กจาก Postman
+- เชื่อม Route ของการ get list users และ delete, update, get user detail by id เข้ากับ Business Logic
+- set cache ของ model ให้เป็น false ของ เพื่อให้ ไฟล์ Business Logic ที่ถูก import ไป test ที่มี การ import model ไปไม่ error
+```js
+const model = gstore.model('AccessToken', schema, { cache: false });
+```
 
 
 ## Day 36 - *22/07/2016*
 
+**ศุภณัฐ**
 
+ทำ Backend Project `Social`
+- เขียน Business Logic & Test ของส่วน Organization และ Permission
+- เชื่อม Route & Proxy ของส่วน Organization เข้ากับ Business Logic และ Service
+- เชื่อม Route & Proxy ของส่วน Permission จะมีเกี่ยวกับรายละเอียด Resource ที่เข้าถึงได้ ซึ่งแต่ละ Role ซึ่งจะเก็บ id ของ permissions ไว้
 
 ## Day 37 - *25/07/2016*
 
+**ศุภณัฐ**
+
+ทำ Backend Project `Social`
+- เขียน Business Logic & Test ของ Authorization
+- เชื่อม Authorization Middleware เข้ากับ Business Logic
+- ทำในส่วน check global permission จาก role ผ่าน Authorization Middleware
+
+ในการเข้าถึง Project ใดๆ ต้องตรวจสอบว่า มีสิทธิ์ในการเข้าถึง Project นั้นหรือไม่ จะคล้ายๆกับ github ว่ามี 3 ระดับ
+ถ้าหากมีสิทธิ์อย่างใดอย่างนึงจึงจะใช้งานได้
+- global permission คล้ายกับ Admin (check role ของ user แล้วไปเทียบตาม permission ว่ามีสิทธิ์หรือไม่)
+- organization permission คล้ายกับ Team หรือ Organization (organization ที่ user นั้นอยู่ มีสิทธิ์ในการ เข้าถึงหรือไม่)
+- project permission คล้ายกับ repo ที่มีการ add collaborator (check ใน project ว่า user นั้น มีสิทธิ์ อะไรบ้าง)
 
 
 ## Day 38 - *26/07/2016*
 
+**ศุภณัฐ**
+
+ทำ Backend Project `Social`
+- ทำในส่วน Middleware, Business Logic และ Test ของ check organization permission และ project permission ต่อจากเดิม
+- เชื่อมส่วน Middleware เข้ากับการ query เพื่อตรวจสอบ
 
 
 ## Day 39 - *27/07/2016*
 
+**ศุภณัฐ**
 
+ศึกษาเกี่ยวกับ Redux Testing จาก [Bumuse](https://github.com/bemusic/bemuse/tree/master/src/app)
+และการใช้งาน Redux ร่วมกับ [redux-actions](https://github.com/acdlite/redux-actions)
+
+ได้ลองถามพี่เกี่ยวกับการที่ต้อง query ทุกครั้งเพื่อ check access-token
+กับการที่เราเข้ารหัส access-token เองเพื่อให้สามารถตรวจสอบเองได้ ไม่ต้องเข้าถึง database ตลอดเวลา เช่น พวก date, checksum ต่างๆ เอง
+ซึ่งสงสัยว่าอาจจะใช้ [Bloom-Filter](https://th.wikipedia.org/wiki/%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%A5%E0%B8%B9%E0%B8%A1) ในการช่วยตรวจสอบได้หรือไม่ ?
+
+พี่ซัน ได้แนะนำ [JWT](https://jwt.io) เผื่อในกรณีที่อยากตรวจสอบข้อมูลที่ได้จาก token ของ user ได้
 
 ## Day 40 - *28/07/2016*
 
+### แหล่งศึกษา
 
+**ศุภณัฐ**
+ได้เจอที่พี่กอล์ฟเคยพูดถึงเกี่ยวกับ `angularjs-seo` ในบทความ [angularjs-seo-with-prerender-io](https://scotch.io/tutorials/angularjs-seo-with-prerender-io)
+ศึกษา TDD ReactJS Redux จาก http://engineering.pivotal.io/post/tdding-react-and-redux
+
+ศึกษาแนวคิดการใช้งาน `createReducer` จาก [ReducingBoilerplate](http://redux.js.org/docs/recipes/ReducingBoilerplate.html)
 
 ## Day 41 - *29/07/2016*
+
+**ศุภณัฐ**
+
+### แหล่งศึกษา
+
+- [react-router](https://github.com/reactjs/react-router)
+- [@asyncConnect](https://github.com/Rezonans/redux-async-connect)
+- [@asyncConnect vs @connect](http://stackoverflow.com/questions/36000039/react-redux-not-passing-data)
+
+
+Web `GG`
+
+ดึงค่าต่างๆ จาก API จาก Backend มาแสดง
+
+ตอนแรกเจอปัญหา @asyncConnect ดึงข้อมูลไม่ได้ เนื่องจาก เรียกใช้ @asyncConnect ใน Component ย่อย ที่ไม่ใช่ Container
+ซึ่งจริงๆ แล้ว ต้องใช้กับ react-router เมื่อมีการ Load route แล้วเรียก Component ตัวไหน ถึงจะใช้ได้
+
+```js
+<Route to="/home" component={Home} />
+```
+
+```js
+// Home.js
+...
+@asyncConnect(...)
+export default class Home extends Component {
+  ...
+}
+```
+
+```js
+// Card.js
+@asyncConnect(...)
+export default class Card extends Component {
+  ...
+}
+```
+ในกรณีนี้ Home จะใช้งานร่วมกับ @asyncConnect ได้ แต่ Card จะใช้ไม่ได้
