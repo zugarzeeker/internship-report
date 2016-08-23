@@ -3,5 +3,6 @@
   "styles": {
     "website": "./styles/website.scss"
   },
-  "description": "Internship report @Runnables of Supanut & Aikdanai"
+  "description": "Internship report @Runnables of Supanut & Aikdanai",
+  "author": "Supanut & Aikdanai"
 }
